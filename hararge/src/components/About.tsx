@@ -33,13 +33,11 @@ export default function AboutSection() {
           className="flex-1 space-y-5"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-            Empowering Hararge Students to Succeed
+            Empowering Hararge Students to Succeed at Jimma university
           </h2>
           <p className="text-gray-700 leading-relaxed">
             This platform is built by senior students of{" "}
-            <span className="font-semibold text-primary">
-              Hararge University
-            </span>{" "}
+            <span className="font-semibold text-primary">Jimma University</span>{" "}
             to guide, support, and inspire new students joining our academic
             community. We understand the challenges of starting university life
             — and we’re here to make your journey easier.

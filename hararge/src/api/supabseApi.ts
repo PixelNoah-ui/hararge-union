@@ -24,7 +24,7 @@ export async function createMember(data: MemberData) {
 
   if (fetchError) throw new Error(fetchError.message);
   if (existingMember) {
-    throw new Error("Member already registered with this email or phone");
+    throw new Error("Member already registered with this  phone");
   }
 
   const { data: member, error: insertError } = await supabase

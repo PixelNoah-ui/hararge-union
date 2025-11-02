@@ -7,6 +7,7 @@ interface MemberData {
   fullName: string;
   phone: string;
   year: string;
+  campus: string;
   department: string;
 }
 

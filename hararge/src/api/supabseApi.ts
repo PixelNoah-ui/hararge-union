@@ -5,13 +5,14 @@ export type MemberData = {
   fullName: string;
   phone: string;
   year: string;
+  campus: string;
   department: string;
 };
 
 export async function createMember(data: MemberData) {
-  const { fullName, phone, year, department } = data;
+  const { fullName, phone, year, campus, department } = data;
 
-  if (!fullName || !phone || !year || !department) {
+  if (!fullName || !phone || !year || !campus || !department) {
     throw new Error("All fields are required");
   }
 
@@ -34,6 +35,7 @@ export async function createMember(data: MemberData) {
         phone,
         year,
         department,
+        campus,
       },
     ])
     .select()

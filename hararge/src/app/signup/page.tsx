@@ -20,6 +20,7 @@ type RegisterForm = {
   phone: string;
   year: string;
   department: string;
+  campus: string;
 };
 
 export default function RegisterPage() {
@@ -32,7 +33,7 @@ export default function RegisterPage() {
     formState: { errors },
     reset,
   } = useForm<RegisterForm>({
-    defaultValues: { year: "", department: "" },
+    defaultValues: { year: "", department: "", campus: "" },
     mode: "onBlur",
   });
 
@@ -42,6 +43,7 @@ export default function RegisterPage() {
   };
 
   const years = ["Freshman", "2nd Year", "3rd Year", "4th Year", "5th Year"];
+  const campuses = ["Main Campus", "JIT Campus", "Beko Campus", "Agero Campus"];
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
@@ -130,7 +132,6 @@ export default function RegisterPage() {
 
           <div className="space-y-2">
             <Label htmlFor="year">Year</Label>
-
             <Controller
               name="year"
               control={control}
@@ -153,9 +154,37 @@ export default function RegisterPage() {
                 </Select>
               )}
             />
-
             {errors.year && (
               <p className="text-sm text-red-500">{errors.year.message}</p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="campus">Campus</Label>
+            <Controller
+              name="campus"
+              control={control}
+              rules={{ required: "Campus is required" }}
+              render={({ field }) => (
+                <Select
+                  value={field.value}
+                  onValueChange={(val) => field.onChange(val)}
+                >
+                  <SelectTrigger id="campus" className="rounded-none">
+                    <SelectValue placeholder="Select your campus" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {campuses.map((c) => (
+                      <SelectItem key={c} value={c}>
+                        {c}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
+            />
+            {errors.campus && (
+              <p className="text-sm text-red-500">{errors.campus.message}</p>
             )}
           </div>
 

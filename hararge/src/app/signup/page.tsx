@@ -43,7 +43,13 @@ export default function RegisterPage() {
   };
 
   const years = ["Freshman", "2nd Year", "3rd Year", "4th Year", "5th Year"];
-  const campuses = ["Main Campus", "JIT Campus", "Beko Campus", "Agero Campus"];
+  const campuses = [
+    "Main Campus",
+    "JIT Campus",
+    "Beko Campus",
+    "Agri Campus",
+    "Agero Campus",
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
